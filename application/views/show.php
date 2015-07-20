@@ -6,10 +6,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<title>Cart</title>
 	<style type="text/css">
-		/*insert CSS here*/
+		/*insert CSS here and here*/
 	</style>
 </head>
 <body>
+<p></p><!-- delete this -->
 <div>
 	<div>
 		<h1>Dojo eCommerce</h1>
