@@ -10,7 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-<p></p><!-- delete this -->
 <div>
 	<div>
 		<h1>Dojo eCommerce</h1>
