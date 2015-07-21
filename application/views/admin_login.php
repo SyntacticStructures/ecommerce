@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div id="login" class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 id = "header" class="text-center login-title">ADMIN LOGIN</h1>
+            <h1 id = "header" class="text-center login-title">Admin Login</h1>
             <div class="account-wall">
                 <form class="form-signin">
 	                <input type="text" class="form-control" placeholder="Email" required autofocus>

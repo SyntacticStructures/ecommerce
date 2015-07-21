@@ -20,7 +20,7 @@
     font-size: 16px;
     height: auto;
     padding: 10px;
-    font-family: arial black;
+    font-family: futura, helvetica, arial;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -48,7 +48,7 @@
     /*background-color: #f7f7f7;*/
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
 }
 .login-title
 {
@@ -78,19 +78,19 @@
 }
 
 #login {
-	margin-top: 225px;
+	margin-top: 315px;
 }
 
 .login-title {
-	font-family: arial black;
+	font-family: futura, helvetica, arial;
+	font-weight: bold;
+	color: white;
+	font-size: 40px;
 }
 
 .background {
-	background-color: #B2FFFF;
-}
-
-.header {
-	font-family: sans-serif;
+	background-image: url("http://harold.wpengine.netdna-cdn.com/wp-content/uploads/2013/07/Pyramide-bw.jpg");
+	background-size: 1923px 1139px;
 }
 
 .btn:hover, .btn:focus, .btn.focus {
@@ -102,18 +102,19 @@
 }
 
 .btn-primary {
-	background-color: #B2FFFF;
+	background-color: #333333;
 }
 
 .text {
-	color: #333333;
-	font-family: arial black;
+	color: white;
+	font-family: futura, helvetica, arial;
+	font-weight: bold;
 	display: inline-block;
 	width: 299px;
 	height: 25px;
 }
 
 .btn {
-	border: 1px solid #333333;
+	border: 0px solid #333333;
 	padding: 0px;
 }
