@@ -16,7 +16,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<h1>Dojo eCommerce</h1>
 		<h2>Shopping Cart <?php //add number in php?></h2>
 	</div>
-
 	<div class="list">
 		<table>
 			<tr>
