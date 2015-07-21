@@ -4,22 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Mains extends CI_Controller {
 	public function index()
 	{		
-<<<<<<< HEAD
-<<<<<<< HEAD
-		$this->load->view('products');
-=======
-		$this->load->view('order_info');
->>>>>>> Taylor
-=======
+        $categories = $this->Model->get_categories();
+        $this->session->set_userdata('categories', $categories);
 		$this->load->view('temp_add_view');
->>>>>>> Taylor
 	}
     public function admin(){/*how do i go just directly to admin without having mains in the url?*/
         $this->load->view('admin_login');
     }
     public function admindash(){
-        if ($this->session->userdata('admin') == 'in') {
-            $this->load->view('dashboard_orders');/*This if statement is to ensure that the admin is logged in so nobody can just type the url to get adin power*/
+        if ($this->session->userdata('admin') == 'in') {/*This if statement is to ensure that the admin is logged in so nobody can just type the url to get admin power*/
+            $products = $this->Model->get_all_products();
+            // put ALL products in session data
+            $this->session->set_userdata('all_products',$products);
+            $this->load->view('dashboard_products');
         }else{
             redirect('/');
         }
@@ -38,12 +35,19 @@ class Mains extends CI_Controller {
             redirect('/mains/admin'); /*how do i go just directly to admin without having mains in the url?*/
         }
     }
-<<<<<<< HEAD
-=======
     public function add_item(){
+        $input = $this->input->post();
 
+        /*if the admin didnt choose to add a new category, we add the stuff */
+        if ($input['add_category'] == '') {
+            $add_check = $this->Model->insert($input);
+        }
+        else{
+
+            $this->Model->insert_category($input['add_category']);
+            $input['categories'] = $input['add_category']; /*the category to be inserted is now the new category added by the admin*/
+            $add_check = $this->Model->insert($input);/*add the whole item with the custom category to the DB */
+
+        }
     }
-
-
->>>>>>> Taylor
 }

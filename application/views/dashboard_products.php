@@ -19,28 +19,52 @@
 	<button>Add new Product</button> <!-- This links to the add product page -->
 	<table>
 		<tr> <!-- This is the tr for the column names only -->
-			<td>
+			<th>
 				Picture
-			</td>
-			<td>
+			</th>
+			<th>
 				ID
-			</td>
-			<td>
+			</th>
+			<th>
 				Name
-			</td>
-			<td>
+			</th>
+			<th>
 				Inventory Count
-			</td>
-			<td>
+			</th>
+			<th>
 				Quantity Sold
-			</td>
-			<td>
+			</th>
+			<th>
 				Action
-			</td>
+			</th>
 		</tr>
-		<tr> <!-- This is an example row -->
+		<?php $products = $this->session->userdata('all_products'); var_dump($products[0]['image']) ?> <!-- LUKE: resize images -->
+		<?php foreach ($products as $product ) { ?>
+			<tr>
+				<td>
+					<img src= <?php echo '"assets/' . $product['image'] . '"' ?> height = '100' width ='150' >
+				</td>
+				<td>
+					<?= $product['id'] ?>
+				</td>
+				<td>
+					<?= $product['name'] ?>
+				</td>
+				<td>
+					<?= $product['inventory_count'] ?>
+				</td>
+				<td>
+					<?= $product['quantity_sold'] ?>
+				</td>
+				<td>
+					<a href="/">edit</a>
+					<a href="/">delete</a>
+				</td>
+			</tr>
+		<?php } ?>
+		<tr>
 			<td>
-				Pic
+				test
 			</td>
 			<td>
 				12
@@ -71,11 +95,4 @@
 		</ul>
 	</div>
 </body>
-
-
-
-
-
-
-
 </html>
