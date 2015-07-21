@@ -71,6 +71,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<label>Expiration: <input type="text" name="expiration"></label>
 			<label><input type="submit" value="Pay"></label>
 		</form>
+
+
+<!-- STRIPE -->
+		<form action="" method="POST">
+		  <script
+		    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		    data-key="pk_live_rR9bbCVimInhIcbqH65iTQGB"
+		    data-amount="2000"
+		    data-name="Demo Site"
+		    data-description="2 widgets ($20.00)"
+		    data-image="/128x128.png">
+		  </script>
+		</form>
+<!-- END STRIPE -->
+
 	</div>
 </div>
 </body>
