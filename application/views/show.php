@@ -19,6 +19,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div> <!-- This is the image box area -->
 		<img src=""> <!-- image of product -->
 	</div>
+
+	<div> <!-- This is the image box area of the other angles-->
+		<img src=""> <!-- image of product from angle 2-->
+		<img src=""> <!-- image of product from angle 3-->
+		<img src=""> <!-- image of product from angle 4-->
+		<img src=""> <!-- image of product from angle 5-->
+		<img src=""> <!-- image of product from angle 6-->
+	</div>
+
 	<div> <!-- description box -->
 		<p>description</p>
 		<form> <!-- needs action and method -->
@@ -38,12 +47,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<ul> <!-- display images of similar items (random items from same cateogry) -->
 			<li>
 				item image
+				<img src="">
 			</li>
 			<li>
 				item image
+				<img src="">
 			</li>
 			<li>
 				item image
+				<img src="">
 			</li>
 		</ul>
 	</div>

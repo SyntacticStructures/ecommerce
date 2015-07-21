@@ -47,9 +47,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<div class="completeForms">
-		<h3>Shipping Information</h3>
+		<h3>Check out</h3>
 		<form action="" method="post">
-			<label>First Name: <input type="text" name="first_name"></label>
+<!-- 			<label>First Name: <input type="text" name="first_name"></label>
 			<label>Last Name: <input type="text" name="last_name"></label>
 			<label>Address: <input type="text" name="address"></label>
 			<label>Address 2: <input type="text" name="address2"></label>
@@ -65,23 +65,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<label>Address 2: <input type="text" name="bill_address2"></label>
 			<label>City: <input type="text" name="bill_city"></label>
 			<label>State: <input type="text" name="bill_state"></label>
-			<label>Zipcode: <input type="text" name="bill_zipcode"></label>
-			<label>Card: <input type="text" name="card"></label>
-			<label>Security Code: <input type="text" name="securitycode"></label>
-			<label>Expiration: <input type="text" name="expiration"></label>
-			<label><input type="submit" value="Pay"></label>
-		</form>
+			<label>Zipcode: <input type="text" name="bill_zipcode"></label> -->
+			<!-- <label><input type="submit" value="Pay"></label> -->
+		<!-- </form> -->
 
 
-<!-- STRIPE -->
-		<form action="" method="POST">
+
+
+
+<!-- STRIPE 
+ <form action="" method="POST">-->
 		  <script
 		    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		    data-key="pk_live_rR9bbCVimInhIcbqH65iTQGB"
 		    data-amount="2000"
 		    data-name="Demo Site"
-		    data-description="2 widgets ($20.00)"
-		    data-image="/128x128.png">
+		    data-description="Your Shopping Cart ($20.00)"
+		    data-image="http://travelhdwallpapers.com/wp-content/uploads/2014/02/The-Louvre-16.jpg">
 		  </script>
 		</form>
 <!-- END STRIPE -->
