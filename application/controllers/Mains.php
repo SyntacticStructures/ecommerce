@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Mains extends CI_Controller {
 	public function index()
 	{		
-		$this->load->view('order_info');
+		$this->load->view('temp_add_view');
 	}
     public function admin(){/*how do i go just directly to admin without having mains in the url?*/
         $this->load->view('admin_login');
@@ -30,4 +30,9 @@ class Mains extends CI_Controller {
             redirect('/mains/admin'); /*how do i go just directly to admin without having mains in the url?*/
         }
     }
+    public function add_item(){
+
+    }
+
+
 }
