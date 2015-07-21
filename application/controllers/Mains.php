@@ -5,9 +5,13 @@ class Mains extends CI_Controller {
 	public function index()
 	{		
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$this->load->view('products');
 =======
 		$this->load->view('order_info');
+>>>>>>> Taylor
+=======
+		$this->load->view('temp_add_view');
 >>>>>>> Taylor
 	}
     public function admin(){/*how do i go just directly to admin without having mains in the url?*/
@@ -34,4 +38,12 @@ class Mains extends CI_Controller {
             redirect('/mains/admin'); /*how do i go just directly to admin without having mains in the url?*/
         }
     }
+<<<<<<< HEAD
+=======
+    public function add_item(){
+
+    }
+
+
+>>>>>>> Taylor
 }
