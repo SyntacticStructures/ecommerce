@@ -107,6 +107,79 @@ h1 {
 	color: #464646;
 }
 
+h2 {
+	font-family: Futura, helvetica, arial;
+	font-size: 55px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	display: block;
+	position: static;
+	text-align: center;
+	border-bottom: solid 1px #333333;
+	padding-bottom: 20px;
+}
+
+.img_description {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	background: rgba(29, 106, 154, 0.72);
+  	color: #fff;
+  	visibility: hidden;
+  	opacity: 0;
+  	-webkit-transition: visibility opacity 0.2s;
+}
+
+.photowrap:hover .imgDescription {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+body {
+	font: 14px/1.4 arial;
+}
+
+.imgWrap {
+	display: inline-block;
+	position: relative;
+}
+
+.imgDescription {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-family: Futura, helvetica, arial;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100; 
+	color: #333333;
+	visibility: hidden;
+	opacity: 0;
+  
+}
+
+
+.imgWrap:hover .imgDescription {
+	visibility: visible;
+	opacity: 1;
+	color: 
+}
+
+.link {
+	color: #333333;
+}
+
+.link:hover {
+	color: #494747;
+	text-decoration: none;
+}
 
 
 
