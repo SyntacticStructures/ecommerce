@@ -6,7 +6,8 @@
 </head>
 <body>
 <h3>Admin Login Page</h3>
-<form>
+<?= $this->session->flashdata('errors'); ?>
+<form action="login" method="post">
 	<label>Email: <input type="text" name="email"></label>
 	<label>Password: <input type="password" name="password"></label>
 	<input type="submit" name="submit" value="login">
