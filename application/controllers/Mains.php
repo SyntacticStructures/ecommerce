@@ -8,6 +8,10 @@ class Mains extends CI_Controller {
         $this->session->set_userdata('categories', $categories);
 		$this->load->view('temp_add_view');
 	}
+
+    public function carts(){
+        $this->load->view('carts');
+    }
     public function admin(){/*how do i go just directly to admin without having mains in the url?*/
         $this->load->view('admin_login');
     }
