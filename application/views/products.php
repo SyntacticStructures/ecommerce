@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<!-- make a NEW DIV FOREACH ... from HERE... -->
 		<div class = "imgWrap">
 			<!-- ECHO OUT FROM DATABASE -->
-			<img src="http://www.forever21.com/images/default_330/00173198-01.jpg">
+			<img src="<?php echo base_url("assets/images/new_94_783_8420_041_55.jpeg"); ?>" height = "533" width = "320">
 			<!-- ECHO OUT FROM DATABASE INSTEAD OF DUMMY DATA -->
 			<!-- THE LINK GOES TO THE PRODUCT PAGE -->
 			<p class = "imgDescription"><a class="link" href="">Dress / Price: $49.99</a></p>
