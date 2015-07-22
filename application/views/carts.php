@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>Cart</title>
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 	<style type="text/css">
 		/*insert CSS here*/
 	</style>
@@ -68,23 +69,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<label>Card: <input type="text" name="card"></label>
 			<label>Security Code: <input type="text" name="securitycode"></label>
 			<label>Expiration: <input type="text" name="expiration"></label>
-			<label><input type="submit" value="Pay"></label>
+			<!-- SUMBIT IF RECIEVES TOKEN FROM STRIPE VIP -->
 		</form>
 
 
 <!-- STRIPE -->
 
-		<?php require_once('stripeConfig.php'); ?>
-		<form action="" method="POST">
+	 <script type="text/javascript">
+  		// This identifies your website in the createToken call below
+  		Stripe.setPublishableKey('pk_test_WgLaJw3sDAQlCw72oqyMefew');
+  		// ...
+	</script>
 
-		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		    data-key="pk_live_rR9bbCVimInhIcbqH65iTQGB"
-		    data-amount="2000"
-		    data-name="Demo Site"
-		    data-description="2 widgets ($20.00)"
-		    data-image="/128x128.png">
-		  </script>
-		</form>
+
+
+
+	<form action="" method="POST">
+	  <script
+	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	    data-key="pk_test_WgLaJw3sDAQlCw72oqyMefew"
+	    data-amount="2000"
+	    data-name="Demo Site"
+	    data-description="2 widgets ($20.00)"
+	    data-image="http://travelhdwallpapers.com/wp-content/uploads/2014/02/The-Louvre-16.jpg">
+	  </script>
+
+	</form>
+
 <!-- END STRIPE -->
 
 	</div>
