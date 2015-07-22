@@ -1,6 +1,10 @@
 .container {
 	display: inline-block;
+<<<<<<< HEAD
 	width: 1900px;
+=======
+	width: 100%
+>>>>>>> origin/Luke
 	min-width: 300px;
 	/*background-color: blue;*/
 }
@@ -16,12 +20,27 @@ h1 {
 	text-align: center;
 	border-bottom: solid 1px #333333;
 	padding-bottom: 20px;
+<<<<<<< HEAD
 }
 
 .header {
 	display: inline-block;
 	width: 100%;
 	position: static;
+=======
+	margin-bottom: 0px;
+}
+
+.header {
+	display: block;
+	width: 100%;
+	position: absolute;
+}
+
+.page-header {
+	padding-bottom: 0px;
+	border-bottom: 1px solid #333333;
+>>>>>>> origin/Luke
 }
 
 .search {
@@ -31,9 +50,14 @@ h1 {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: lighter;
+<<<<<<< HEAD
 	margin-top: 45px;
 	margin-bottom: 20px;
 	position: static;
+=======
+	position: absolute;
+	display: inline;
+>>>>>>> origin/Luke
 }
 
 .shoppingcart_text {
@@ -43,11 +67,18 @@ h1 {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: lighter;
+<<<<<<< HEAD
 	display: inline-block;
 	position: static;
 	width: 200px;
 	text-align: center;
 	margin-left: 349px;
+=======
+	display: inline;
+	position: absolute;
+	width: 100px;
+	text-align: center;
+>>>>>>> origin/Luke
 
 }
 
@@ -59,15 +90,29 @@ h1 {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: lighter;
+<<<<<<< HEAD
 	margin-top: 45px;
 	width: 800px;
 	position: static;
 	text-align: center;
+=======
+	margin-bottom: 45px;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	width: 100%;
+	position: static;
+	text-align: center;
+	border-bottom: 1px solid #333333;
+>>>>>>> origin/Luke
 }
 
 .listitem {
 	list-style: none;
+<<<<<<< HEAD
 	display: inline;
+=======
+	display: inline-block;
+>>>>>>> origin/Luke
 	border-right: 1px solid #333333;
 	padding-right: 16px;
 	margin-left: 10px;
@@ -77,7 +122,11 @@ h1 {
 .list {
 	display: inline;
 	text-align: center;
+<<<<<<< HEAD
 	padding-left: 569px;
+=======
+	padding-left: 0px;
+>>>>>>> origin/Luke
 }
 
 .lastitem {
@@ -96,6 +145,7 @@ h1 {
 	color: #464646;
 }
 
+<<<<<<< HEAD
 .header_image {
 	display: block;
 	text-align: center;
@@ -108,6 +158,28 @@ h1 {
 }
 
 h2 {
+=======
+.shoppingcart_text:hover {
+	color: #464646;
+}
+
+.header_image {
+
+	text-align: center;
+}
+
+body {
+	font-family: Futura, helvetica, arial;
+}
+
+.imgWrap {
+	max-width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+h3 {
+>>>>>>> origin/Luke
 	font-family: Futura, helvetica, arial;
 	font-size: 55px;
 	font-style: normal;
