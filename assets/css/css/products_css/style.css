@@ -1,7 +1,11 @@
 .container {
 	display: inline-block;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	width: 1900px;
+=======
+	width: 100%
+>>>>>>> origin/Luke
 =======
 	width: 100%
 >>>>>>> origin/Luke
@@ -21,6 +25,7 @@ h1 {
 	border-bottom: solid 1px #333333;
 	padding-bottom: 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 .header {
@@ -28,6 +33,8 @@ h1 {
 	width: 100%;
 	position: static;
 =======
+=======
+>>>>>>> origin/Luke
 	margin-bottom: 0px;
 }
 
@@ -40,6 +47,9 @@ h1 {
 .page-header {
 	padding-bottom: 0px;
 	border-bottom: 1px solid #333333;
+<<<<<<< HEAD
+>>>>>>> origin/Luke
+=======
 >>>>>>> origin/Luke
 }
 
@@ -51,9 +61,14 @@ h1 {
 	font-variant: normal;
 	font-weight: lighter;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-top: 45px;
 	margin-bottom: 20px;
 	position: static;
+=======
+	position: absolute;
+	display: inline;
+>>>>>>> origin/Luke
 =======
 	position: absolute;
 	display: inline;
@@ -68,16 +83,22 @@ h1 {
 	font-variant: normal;
 	font-weight: lighter;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	display: inline-block;
 	position: static;
 	width: 200px;
 	text-align: center;
 	margin-left: 349px;
 =======
+=======
+>>>>>>> origin/Luke
 	display: inline;
 	position: absolute;
 	width: 100px;
 	text-align: center;
+<<<<<<< HEAD
+>>>>>>> origin/Luke
+=======
 >>>>>>> origin/Luke
 
 }
@@ -91,11 +112,14 @@ h1 {
 	font-variant: normal;
 	font-weight: lighter;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-top: 45px;
 	width: 800px;
 	position: static;
 	text-align: center;
 =======
+=======
+>>>>>>> origin/Luke
 	margin-bottom: 45px;
 	margin-top: 20px;
 	padding-bottom: 20px;
@@ -103,13 +127,20 @@ h1 {
 	position: static;
 	text-align: center;
 	border-bottom: 1px solid #333333;
+<<<<<<< HEAD
+>>>>>>> origin/Luke
+=======
 >>>>>>> origin/Luke
 }
 
 .listitem {
 	list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	display: inline;
+=======
+	display: inline-block;
+>>>>>>> origin/Luke
 =======
 	display: inline-block;
 >>>>>>> origin/Luke
@@ -123,7 +154,11 @@ h1 {
 	display: inline;
 	text-align: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	padding-left: 569px;
+=======
+	padding-left: 0px;
+>>>>>>> origin/Luke
 =======
 	padding-left: 0px;
 >>>>>>> origin/Luke
@@ -146,6 +181,7 @@ h1 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .header_image {
 	display: block;
 	text-align: center;
@@ -159,6 +195,8 @@ h1 {
 
 h2 {
 =======
+=======
+>>>>>>> origin/Luke
 .shoppingcart_text:hover {
 	color: #464646;
 }
@@ -179,6 +217,9 @@ body {
 }
 
 h3 {
+<<<<<<< HEAD
+>>>>>>> origin/Luke
+=======
 >>>>>>> origin/Luke
 	font-family: Futura, helvetica, arial;
 	font-size: 55px;
