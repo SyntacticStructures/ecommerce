@@ -73,9 +73,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <!-- STRIPE -->
+
+		<?php require_once('stripeConfig.php'); ?>
 		<form action="" method="POST">
-		  <script
-		    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+
+		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		    data-key="pk_live_rR9bbCVimInhIcbqH65iTQGB"
 		    data-amount="2000"
 		    data-name="Demo Site"
