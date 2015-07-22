@@ -84,13 +84,17 @@
 .login-title {
 	font-family: futura, helvetica, arial;
 	font-weight: bold;
-	color: white;
+	color: #333333;
 	font-size: 40px;
 }
 
 .background {
-	background-image: url("http://harold.wpengine.netdna-cdn.com/wp-content/uploads/2013/07/Pyramide-bw.jpg");
-	background-size: 1923px 1139px;
+    background-image: url("http://harold.wpengine.netdna-cdn.com/wp-content/uploads/2013/07/Pyramide-bw.jpg");
+    background-position: center;
+	background-size: 100%;
+    max-width: 100%;
+    height: auto;
+    position: static;
 }
 
 .btn:hover, .btn:focus, .btn.focus {
