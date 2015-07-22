@@ -51,6 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Mains';
 $route['login'] = 'Mains/login';
+$route['admin'] = 'Mains/admin';
+$route['edit/(:any)'] = 'Mains/edit_page/$1';
+$route['edit_item/(:any)'] = 'Mains/edit_item/$1';
 $route['admindash'] = 'Mains/admindash';
 $route['add'] = 'Mains/add_item';
 $route['404_override'] = '';

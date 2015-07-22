@@ -46,9 +46,9 @@ class Model extends CI_Model {
             $values = $product['categories'];
             $category_id = $this->db->query($query,$values)->row_array();
 
-            /*insert name and price*/
-            $query = "INSERT INTO products (name, price, category_id, created_at, updated_at) VALUES(?,?,?,?,?)";
-            $values = array($product['name'], $product['price'], $category_id, date("Y-m-d, H:i:s"), date("Y-m-d, H:i:s"));
+            /*insert name and price and description*/
+            $query = "INSERT INTO products (name, price, description, category_id, created_at, updated_at) VALUES(?,?,?,?,?,?)";
+            $values = array($product['name'], $product['price'], $product['description'], $category_id, date("Y-m-d, H:i:s"), date("Y-m-d, H:i:s"));
             $this->db->query($query, $values);
 
             /*get id of inserted product*/
@@ -57,8 +57,8 @@ class Model extends CI_Model {
             $values = $product['name'];
             $product_id = $this->db->query($query,$values)->row_array();
 
-            var_dump($product_id);
-            
+            // Insert the image.
+
             $query = "INSERT INTO images (image, product_id, created_at, updated_at) VALUES (?,?,?,?)";
             $values = array($product['image'], $product_id, date("Y-m-d, H:i:s"), date("Y-m-d, H:i:s"));
             $this->db->query($query,$values);
@@ -76,6 +76,15 @@ class Model extends CI_Model {
      function get_all_products(){
         $query = "SELECT * FROM products LEFT JOIN images on images.product_id = products.id";
         return $this->db->query($query)->result_array();
+     }
+     function get_product_by_id($id){
+        $query = "SELECT * FROM products LEFT JOIN images on images.product_id = products.id WHERE products.id=?";
+        $values = $id;
+        $products = $this->db->query($query, $id)->row_array();
+        $query = "SELECT category FROM categories WHERE id = ?";
+        $values = $products['category_id'];
+        $category = $this->db->query($query, $values)->row_array();
+        return array($products, $category);
      }
 }
 

@@ -38,14 +38,14 @@
 				Action
 			</th>
 		</tr>
-		<?php $products = $this->session->userdata('all_products'); var_dump($products[0]['image']) ?> <!-- LUKE: resize images -->
+		<?php $products = $this->session->userdata('all_products') ?> <!-- LUKE: resize images -->
 		<?php foreach ($products as $product ) { ?>
 			<tr>
 				<td>
 					<img src= <?php echo '"assets/' . $product['image'] . '"' ?> height = '100' width ='150' >
 				</td>
 				<td>
-					<?= $product['id'] ?>
+					<?= $product['product_id'] ?>
 				</td>
 				<td>
 					<?= $product['name'] ?>
@@ -57,7 +57,8 @@
 					<?= $product['quantity_sold'] ?>
 				</td>
 				<td>
-					<a href="/">edit</a>
+					<?php $url = '/edit/' . $product['product_id'] ?>
+					<a href= <?= $url ?>>edit</a>
 					<a href="/">delete</a>
 				</td>
 			</tr>

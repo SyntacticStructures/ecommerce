@@ -21,6 +21,15 @@ class Mains extends CI_Controller {
             redirect('/');
         }
     }
+    public function edit_page($id){
+        if ($this->session->userdata('admin') == 'in') {
+            $edit_get = $this->Model->get_product_by_id($id);
+            $this->session->set_userdata('product_to_edit',$edit_get);
+            $this->load->view('temp_edit_view');
+        }else{
+            redirect('/');
+        }
+    }
 
     public function login(){ /*let's send the password and email over to our model!*/
         $email = $this->input->post('email');
@@ -47,7 +56,17 @@ class Mains extends CI_Controller {
             $this->Model->insert_category($input['add_category']);
             $input['categories'] = $input['add_category']; /*the category to be inserted is now the new category added by the admin*/
             $add_check = $this->Model->insert($input);/*add the whole item with the custom category to the DB */
-
         }
     }
+    public function edit_item(){
+        var_dump($this->input->post());
+        $product = $this->input->post();
+    }
 }
+
+
+
+
+
+
+
