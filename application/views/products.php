@@ -23,20 +23,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<li class = "listitem"><a class = "sidebar_text" href="">SHOES</a></li>
 				<li class = "listitem"><a class = "sidebar_text" href="">SHORTS / SKIRTS</a></li>
 				<li class = "listitem"><a class = "sidebar_text" href="">DRESSES</a></li>
-				<li class = "lastitem"><a class = "sidebar_text" href="">JEWELRY</a></li>
+				<li class = "listitem"><a class = "sidebar_text" href="">JEWELRY</a></li>
+				<!-- ECHO OUT FROM DATABASE HOW MANY ITEMS IN THE CART -->
+				<li class = "lastitem"><a class = "sidebar_text" href="">SHOPPING CART (5)</a></li>
 			</ul>
 			<!-- SEARCH BAR -->
 			<input type = "text" placeholder = "SEARCH" class = "search">
-			<!-- SHOPPING CART -->
-			<!-- ECHO OUT FROM DATABASE HOW MANY ITEMS IN THE CART -->
-			<p class = "shoppingcart_text"><a class = "shoppingcart_text" href="">SHOPPING CART (5)</a></p>
 		</div>
 		<!-- HEADER IMAGE -->
 		<div class = "header_image">
-			<img src="http://www.martaphotographer.com/wp-content/uploads/2012/05/052.jpg" height="719" width="1078" align="middle">
+			<img src="http://www.martaphotographer.com/wp-content/uploads/2012/05/052.jpg" class = "image" height="647" width="970" align="middle">
 		</div>
 		<!-- FEATURED PRODUCTS -->
-			<h2>FEATURED PRODUCTS</h2>
+			<h3>FEATURED PRODUCTS</h3>
 			<!-- make a NEW DIV FOREACH ... from HERE... -->
 		<div class = "imgWrap">
 			<!-- ECHO OUT FROM DATABASE -->
