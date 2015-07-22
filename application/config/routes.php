@@ -51,10 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Mains';
 $route['login'] = 'Mains/login';
+$route['logout'] = 'Mains/logout';
 $route['admin'] = 'Mains/admin';
 $route['edit/(:any)'] = 'Mains/edit_page/$1';
+$route['delete/(:any)'] = 'Mains/delete_item/$1';
 $route['edit_item/(:any)'] = 'Mains/edit_item/$1';
 $route['admindash'] = 'Mains/admindash';
+$route['addpage'] = '/Mains/add_page';
 $route['add'] = 'Mains/add_item';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

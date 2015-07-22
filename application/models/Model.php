@@ -71,7 +71,7 @@ class Model extends CI_Model {
      function insert_category($category){
         $query = "INSERT INTO categories (category, created_at, updated_at) VALUES (?,?,?)";
         $values = array($category, date("Y-m-d, H:i:s"), date("Y-m-d, H:i:s"));
-        $this->db->query($query,$values);
+        return $this->db->query($query,$values);
      }
      function get_all_products(){
         $query = "SELECT * FROM products LEFT JOIN images on images.product_id = products.id";
@@ -85,6 +85,35 @@ class Model extends CI_Model {
         $values = $products['category_id'];
         $category = $this->db->query($query, $values)->row_array();
         return array($products, $category);
+     }
+     function update_item($product){
+        $this->load->library("form_validation");
+        /*Here is the built-in form validation*/
+        $this->form_validation->set_rules("name", "name", "trim|required");
+        $this->form_validation->set_rules("description", "description", "trim");
+        $this->form_validation->set_rules("category", "category", "trim");
+         /*get id of chosen category*/
+        $query = "SELECT id FROM categories WHERE category = ?";
+        $values = $product['categories'];
+        $category_id = $this->db->query($query,$values)->row_array();
+        /*Update all the stuff except images*/
+        $query = "UPDATE products
+         SET name = ?, price = ?, description = ?, updated_at = ?, category_id = ?
+         WHERE id = ?";
+        $values = array($product['name'], $product['price'], $product['description'], date("Y-m-d, H:i:s"), $category_id, $product['id']);
+        $this->db->query($query,$values);
+        if (isset($product['image'])) {
+            $query = "UPDATE images
+                SET image = ?, updated_at = ?
+                WHERE product_id = ?";
+            $values = array($product['image'], date("Y-m-d, H:i:s"), $product['id']);
+            $this->db->query($query,$values);
+        }
+     }
+     function delete_item($id){
+        $query = "DELETE FROM products WHERE id = ? ";
+        $values = $id;
+        $this->db->query($query,$values);
      }
 }
 

@@ -3,20 +3,21 @@
 <head>
 	<meta charset = 'UTF=8'>
 	<title>Dashboard Orders</title>
+	<!-- And an are your sure aler for deleting -->
 </head>
 <body>
 	<div>  <!-- This is topnav -->
-		<a href="/">Dashboard</a>
+		<a href="admindash">Dashboard</a>
 		<a href="/">Orders</a>
-		<a href="/">Products</a>
-		<a href="/">Log Off</a>
+		<a href="admindash">Products</a>
+		<a href="logout">Log Off</a>
 	</div>
 	<form action="" method=""> <!-- This is a search field where admins can search for products or id's or whatever we want her/him to be able to search -->
 	<!-- I think the searching and sorting may ultimately be done with ajax/api -->
 		<input type="search" name="search" placeholder="search">
 		<input type="submit" name="submit" value="search">
 	</form>
-	<button>Add new Product</button> <!-- This links to the add product page -->
+	<a href="addpage">Add new Product</a> <!-- This links to the add product page -->
 	<table>
 		<tr> <!-- This is the tr for the column names only -->
 			<th>
@@ -58,8 +59,9 @@
 				</td>
 				<td>
 					<?php $url = '/edit/' . $product['product_id'] ?>
-					<a href= <?= $url ?>>edit</a>
-					<a href="/">delete</a>
+					<?php $delete_url = '/delete/' . $product['product_id'] ?>
+					<a href= <?= $url ?> >edit</a>
+					<a href= <?= $delete_url ?> >delete</a>
 				</td>
 			</tr>
 		<?php } ?>

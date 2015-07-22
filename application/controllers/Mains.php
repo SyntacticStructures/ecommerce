@@ -18,7 +18,7 @@ class Mains extends CI_Controller {
             $this->session->set_userdata('all_products',$products);
             $this->load->view('dashboard_products');
         }else{
-            redirect('/');
+            redirect('/admin');
         }
     }
     public function edit_page($id){
@@ -27,10 +27,18 @@ class Mains extends CI_Controller {
             $this->session->set_userdata('product_to_edit',$edit_get);
             $this->load->view('temp_edit_view');
         }else{
-            redirect('/');
+            redirect('/admin');
         }
     }
-
+    public function add_page(){
+        if($this->session->userdata('admin') == 'in'){
+            $categories = $this->Model->get_categories();
+            $this->session->set_userdata('categories', $categories);
+            $this->load->view('temp_add_view');
+        }else{
+            redirect('/admin');
+        }
+    }
     public function login(){ /*let's send the password and email over to our model!*/
         $email = $this->input->post('email');
         $password = $this->input->post('password');
@@ -57,10 +65,29 @@ class Mains extends CI_Controller {
             $input['categories'] = $input['add_category']; /*the category to be inserted is now the new category added by the admin*/
             $add_check = $this->Model->insert($input);/*add the whole item with the custom category to the DB */
         }
+        redirect('admindash');
     }
     public function edit_item(){
-        var_dump($this->input->post());
         $product = $this->input->post();
+        if($product['add_category'] == ''){
+            $this->Model->update_item($product);
+        }
+        else{
+            $this->Model->insert_category($product['add_category']);
+            $product['categories'] = $product['add_category'];
+            $this->Model->update_item($product);
+        }
+        redirect('admindash');
+    }
+    public function delete_item($id){
+        $x = $this->Model->delete_item($id);
+        var_dump($x);
+        die('dd');
+        redirect('admindash');
+    }
+    public function logout(){
+        $this->session->set_userdata('admin', 'out');
+        redirect('/admin');
     }
 }
 

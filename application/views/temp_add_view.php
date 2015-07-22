@@ -5,6 +5,8 @@
 </head>
 <body>
 	<?php $categories = $this->session->userdata('categories');?>
+	<a href="/logout">Log off</a>
+	<a href="/admindash">Products</a>
 	<form action="add" method="post">
 		<label>Name <input type="text" name="name"></label>
 		<label>Description: <textarea name="description"></textarea></label>
