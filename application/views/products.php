@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<!-- SEARCH BAR -->
 			<input type = "text" placeholder = "SEARCH" class = "search">
 			<!-- SHOPPING CART -->
+			<!-- ECHO OUT FROM DATABASE HOW MANY ITEMS IN THE CART -->
 			<p class = "shoppingcart_text"><a class = "shoppingcart_text" href="">SHOPPING CART (5)</a></p>
 		</div>
 		<!-- HEADER IMAGE -->
@@ -36,34 +37,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 		<!-- FEATURED PRODUCTS -->
 			<h2>FEATURED PRODUCTS</h2>
+			<!-- make a NEW DIV FOREACH ... from HERE... -->
 		<div class = "imgWrap">
-			<img src="http://www.forever21.com/images/default_330/00173198-01.jpg" title="this is a product">
+			<!-- ECHO OUT FROM DATABASE -->
+			<img src="http://www.forever21.com/images/default_330/00173198-01.jpg">
+			<!-- ECHO OUT FROM DATABASE INSTEAD OF DUMMY DATA -->
+			<!-- THE LINK GOES TO THE PRODUCT PAGE -->
 			<p class = "imgDescription"><a class="link" href="">Dress / Price: $49.99</a></p>
 		</div>
-		<div class = "imgWrap">
-			<img src="http://www.forever21.com/images/default_330/00167116-02.jpg">
-			<p class = "imgDescription"><a class="link" href="">Pull Over Sweater / Price: $16.99</a></p>
-		</div>
-		<div class = "imgWrap">
-			<img src="http://www.forever21.com/images/default_330/00172401-02.jpg">
-			<p class = "imgDescription"><a class="link" href="">Watch / Price: $29.99</a></p>
-		</div>
-		<div class = "imgWrap">
-			<img src="http://www.forever21.com/images/default_330/00077350-01.jpg">
-			<p class = "imgDescription"><a class="link" href="">Purse / Price: $17.99</a></p>
-		</div>
-		<div class = "imgWrap">
-			<img src="http://www.forever21.com/images/default_330/00131473-01.jpg">
-			<p class = "imgDescription"><a class="link" href="">Sneakers / Price: $9.99</a></p>
-		</div>
-		<div class = "imgWrap">
-			<img src="http://www.forever21.com/images/default_330/73106027-04.jpg">
-			<p class = "imgDescription"><a  class="link"href="">Keds® / Price: $12.99</a></p>
-		</div>
-		<div class = "imgWrap">
-			<img src="http://www.forever21.com/images/default_330/00075938-10.jpg">
-			<p class = "imgDescription"><a class="link" href="">Beanie / Price: $4.99</a></p>
-		</div>
+		<!-- to HERE... -->
 	</div>
 </body>
 </html>
