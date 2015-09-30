@@ -1,10 +1,6 @@
 <?php 
 
 class Model extends CI_Model {
-     function get_all_courses()
-     {
-         return $this->db->query("SELECT * FROM courses")->result_array();
-     }
      function login($email, $password){
         $link = mysqli_connect("localhost", "root", "root", "ecommerce"); /*this is a link to the db. this variable must be passed into the real escape string function.*/
         $password = mysqli_real_escape_string($link, $password);
@@ -26,7 +22,7 @@ class Model extends CI_Model {
         }else{
             return false;
         }
-     }
+     }    
      function insert($product){
         $this->load->library("form_validation");
         /*Here is the built-in form validation*/
@@ -111,11 +107,38 @@ class Model extends CI_Model {
         }
      }
      function delete_item($id){
+        /*get image id*/
+        $query = "SELECT images.id FROM images LEFT JOIN products ON products.id = images.product_id WHERE products.id = ?";
+        $values = $id;
+        $image_id = $this->db->query($query,$values)->row_array();
+        /*Delete image*/
+        $query = "DELETE FROM images WHERE id = ?";
+        $values = $image_id;
+        $this->db->query($query,$values);
+        /*Delete product*/
         $query = "DELETE FROM products WHERE id = ? ";
         $values = $id;
         $this->db->query($query,$values);
      }
+     function get_all_orders(){
+        $query = "SELECT * FROM orders";
+        return $this->db->query($query)->result_array();
+     }
+     function update_status($status){
+        $query = "UPDATE orders
+            SET status = ?
+            WHERE id = ?";
+        $values = array($status[0]['status'], $status[1]);
+        $this->db->query($query,$values);
+     }
 }
+
+
+
+
+
+
+
 
 
 ?>

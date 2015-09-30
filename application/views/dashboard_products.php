@@ -8,7 +8,7 @@
 <body>
 	<div>  <!-- This is topnav -->
 		<a href="admindash">Dashboard</a>
-		<a href="/">Orders</a>
+		<a href="admin_orders">Orders</a>
 		<a href="admindash">Products</a>
 		<a href="logout">Log Off</a>
 	</div>
@@ -65,27 +65,6 @@
 				</td>
 			</tr>
 		<?php } ?>
-		<tr>
-			<td>
-				test
-			</td>
-			<td>
-				12
-			</td>
-			<td>
-				T-shirt
-			</td>
-			<td>
-				500
-			</td>
-			<td>
-				2000
-			</td>
-			<td>
-				<a href="/">edit</a>
-				<a href="/">delete</a>
-			</td>
-		</tr>
 	</table>
 	<div> <!-- this div is the set of links to other pages of orders it should automatically generate the correct number of pages with an option to go to first and last -->
 		<ul>

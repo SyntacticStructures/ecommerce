@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mains extends CI_Controller {
 	public function index()
-	{		
-        $categories = $this->Model->get_categories();
-        $this->session->set_userdata('categories', $categories);
-		$this->load->view('temp_add_view');
+	{	
+        $images = $this->Client->get_images(4);
+        $this->session->set_userdata('images', $images);
+		$this->load->view('products');
 	}
     public function admin(){/*how do i go just directly to admin without having mains in the url?*/
         $this->load->view('admin_login');
@@ -18,12 +18,34 @@ class Mains extends CI_Controller {
             $this->session->set_userdata('all_products',$products);
             $this->load->view('dashboard_products');
         }else{
-            redirect('/admin');
+            redirect('/');
+        }
+    }
+    public function admin_orders(){
+        /*get info for display on the table*/
+        if($this->session->userdata('admin') == 'in'){
+            $orders = $this->Model->get_all_orders();
+            $this->session->set_userdata('all_orders',$orders);
+            $this->load->view('dashboard_orders');
+        }else{
+            redirect('/');
+        }
+    }
+    public function update_order_status($order_id){
+        if($this->session->userdata('admin') == 'in'){
+            $status[] = $this->input->post();
+            $status[] = $order_id;
+            $this->Model->update_status($status);
+            redirect('admin_orders');
+        }else{
+            redirect('/');
         }
     }
     public function edit_page($id){
         if ($this->session->userdata('admin') == 'in') {
             $edit_get = $this->Model->get_product_by_id($id);
+            $categories = $this->Model->get_categories();
+            $this->session->set_userdata('categories', $categories);
             $this->session->set_userdata('product_to_edit',$edit_get);
             $this->load->view('temp_edit_view');
         }else{
@@ -81,8 +103,6 @@ class Mains extends CI_Controller {
     }
     public function delete_item($id){
         $x = $this->Model->delete_item($id);
-        var_dump($x);
-        die('dd');
         redirect('admindash');
     }
     public function logout(){
