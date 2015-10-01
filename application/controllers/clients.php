@@ -23,11 +23,11 @@ class Clients extends CI_Controller {
 		} else {
 			$products[] = $product;
 		}
-		// 		var_dump($products);
-		// var_dump($product);
-		// die();
+		$quantity_for_res = $this->cart_count();
+		$response['product_quantity'] = intval($product['quantity']);
+		$response['total'] = intval($quantity_for_res);
+		echo json_encode($response);
 		$this->session->set_userdata('cart', $products);
-		redirect('/Clients/show/' . $product['id']);
 	}
 	public function show_orders(){
 		/*You can't go to your cart if it's empty*/
@@ -43,7 +43,6 @@ class Clients extends CI_Controller {
 		$products = $this->session->userdata('cart');
 		$this->Client->add_order($order, $products);
 		$this->load->view('success');
-
 	}
 	public function destroy_session(){
 		session_destroy();
@@ -62,7 +61,7 @@ class Clients extends CI_Controller {
 		$this->session->set_userdata('cart', $cart);
 		redirect('/');
 	}
-	
+
 	// Helper functions ->>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 	protected function clean_cart($temp_cart) {
@@ -82,6 +81,17 @@ class Clients extends CI_Controller {
 			}
 		}
 		return $new_quantity;
+	}
+	protected function cart_count(){ 
+	/*This will give us the cart count*/
+		$quantity = 0;
+		if($this->session->userdata('cart') !== null){
+			$carts = $this->session->userdata('cart');
+			foreach ($carts as $cart) {
+				$quantity += $cart['quantity'];
+			}
+		}
+		return $quantity;
 	}
 	
 }

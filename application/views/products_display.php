@@ -15,7 +15,7 @@
 		<img src= <?php echo '"/assets/' . $image['image'] . '"' ?> height = "420" width = "330">
 		<!-- ECHO OUT FROM DATABASE INSTEAD OF DUMMY DATA -->
 		<!-- THE LINK GOES TO THE PRODUCT PAGE -->
-		<p class = "imgDescription"><a class="link" href=<?php echo '"/Clients/show/' . $image['id'] . '"' ?>><?= $image['name'] ?>/ Price:<?= money_format('$%i', ($image['price']/100)) ?></a></p>
+		<p class = "imgDescription"> <a class="link" name=<?= "'" + $image['name'] + "'"  ?> id=<?= $image['id'] ?>> <?= $image['name'] ?>/ Price: <?= '$' . $image['price']/100 . '.' . $image['price']%10 . $image['price']%100 ?></a></p>
 	</div>
 
 <?php } ?>

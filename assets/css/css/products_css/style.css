@@ -4,7 +4,10 @@
 	min-width: 300px;
 	/*background-color: blue;*/
 }
-
+/*added by taylor so ajax links still appear to be links with the white gloved hand*/
+a {
+	cursor: pointer;
+}
 h1 {
 	font-family: Futura, helvetica, arial;
 	font-size: 75px;

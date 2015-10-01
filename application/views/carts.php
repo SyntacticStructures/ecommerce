@@ -1,17 +1,5 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Cart</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/css/carts_css/bootstrap.css"); ?>" />
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/css/carts_css/style.css"); ?>" />
-	<meta name=viewport content='width=700'>
-</head>
-<body>
 <?php 
 	/*This will give us the cart count*/
 	$quantity = 0;
@@ -23,9 +11,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}	
   ?>
 <div class="container">
-	<div class="header">
-		<h1>LA MODE</h1>
-	</div>
 	<div class="cart_text">
 		<h2>Shopping Cart <?php //add number in php?></h2>
 	</div>
