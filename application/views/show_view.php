@@ -1,19 +1,5 @@
-
 <link rel="stylesheet" href="<?php echo base_url("assets/css/css/bootstrap.css"); ?>" />
 <link rel="stylesheet" href="<?php echo base_url("assets/css/css/show_css/style.css"); ?>" />
-
-
-<?php 
-	/*This will give us the cart count*/
-	/* woah, this needs to be on the backend */
-	$quantity = 0;
-	if($this->session->userdata('cart') !== null){
-		$carts = $this->session->userdata('cart');
-		foreach ($carts as $cart) {
-			$quantity += $cart['quantity'];
-		}
-	}	
-  ?>
 <body  class = "container">
 	<!-- ADD PRODUCT STARTS HERE ... DO NOT CHANGE ANYTHING FROM THE ABOVE -->
 	<div class="center-block">

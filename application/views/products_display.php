@@ -1,13 +1,3 @@
-<?php 
-	/*This will give us the cart count*/
-	$quantity = 0;
-	if($this->session->userdata('cart') !== null){
-		$carts = $this->session->userdata('cart');
-		foreach ($carts as $cart) {
-			$quantity += $cart['quantity'];
-		}
-	}	
-  ?>
 <h3 id = "ajax_title"></h3>
 <?php foreach ($images as $image) { ?>
 	<div class = "imgWrap">

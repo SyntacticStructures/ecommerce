@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				if(keycode == '13'){
 					var search_string = $('.search').val();
 					$.post('/Clients/search/', {search_string: search_string}, function(res){
-						$('#ajax').html(res);
+						$('#ajax').html("<h3>RESULTS</h3>").append(res);
 						$('.header_image').hide();
 					})
 				}
@@ -75,11 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 	}	
   ?>
-  <div class="errors">
-  	
-  </div>
 		<!-- Load images here -->
-		<?php $images = $this->session->userdata('images'); ?>
 <body class = "container">
 	<div class = "container">
 		<div class = "header">
@@ -104,6 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<img src="http://www.martaphotographer.com/wp-content/uploads/2012/05/052.jpg" class = "image" height="647" width="970" align="middle">
 		</div>
 		<div id = "ajax">
+			<?php $images = $this->session->userdata('images'); ?>
 			<!-- FEATURED PRODUCTS -->
 			<h3>FEATURED PRODUCTS</h3>
 			<?php foreach ($images as $image) { ?>
