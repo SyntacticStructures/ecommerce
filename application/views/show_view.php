@@ -27,7 +27,7 @@
 		<!-- ADD DESCRIPTION OF PRODUCT HERE -->
 			<p><?= $description ?></p>
 			<!-- select quantity you want to buy. The amount of possible purchases should come from backend and be < or = total inventory -->
-			<form class="poop">
+			<form class="add">
 				<select class="opt" name="quantity"> 
 					<?php for($i = 1; $i <= $inventory_count; $i++){?>
 						<option value= <?= "'" . $i . "'" ?> >

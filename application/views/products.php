@@ -23,6 +23,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$('.header_image').hide();
 				})
 			});
+			// listen for enter in the search bar and activate search.
+			$('.search').keypress(function(event){
+				var keycode = (event.keyCode ? event.keyCode : event.which); 
+				if(keycode == '13'){
+					var search_string = $('.search').val();
+					$.post('/Clients/search/', {search_string: search_string}, function(res){
+						$('#ajax').html(res);
+						$('.header_image').hide();
+					})
+				}
+			})
 			// show one product ajax
 			$(document).on('click', ".link", function () {
 			    var id = $(this).attr('id');
@@ -34,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				})
 			});
 			// add to order ajax
-			$(document).on('submit', '.poop', function (e) {
+			$(document).on('submit', '.add', function (e) {
 			    $.post('/Clients/add_to_cart', $(this).serialize(), function(res){
 			    	var response = JSON.parse(res);
 			    	$('.lastitem').text('SHOPPING CART (' + response.total.toString() + ')');
@@ -49,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$('#ajax_title').hide();
 					$('#ajax').html(res)
 				})
-			})
+			});
 		})
 	</script>
 </head>
@@ -64,6 +75,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 	}	
   ?>
+  <div class="errors">
+  	
+  </div>
 		<!-- Load images here -->
 		<?php $images = $this->session->userdata('images'); ?>
 <body class = "container">

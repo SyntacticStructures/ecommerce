@@ -49,7 +49,6 @@ class Clients extends CI_Controller {
 		redirect('/');
 	}
 	public function remove_item($id){
-		// var_dump($this->session->userdata('cart'));
 		$temp_cart = $this->session->userdata('cart');
 		$cart = $this->clean_cart($temp_cart);
 		for($i=0; $i < count($cart); $i++) {
@@ -60,6 +59,17 @@ class Clients extends CI_Controller {
 		$cart = $this->clean_cart($cart);
 		$this->session->set_userdata('cart', $cart);
 		redirect('/');
+	}
+	public function search(){
+		$search_string = $this->input->post();
+		$search_answer = $this->Client->search($search_string['search_string']);
+		if(isset($search_answer[0])) {
+			$images=[];
+			$images['images'] = $search_answer;
+			$this->load->view('products_display', $images);
+		} else {
+			echo "<h3> sorry no results...</h3>";
+		}
 	}
 
 	// Helper functions ->>>>>>>>>>>>>>>>>>>>>>>>>>>

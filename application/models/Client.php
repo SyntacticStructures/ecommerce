@@ -29,9 +29,15 @@ class Client extends CI_Model {
 		}
 	}
 	public function get_show($id){
-		$query = "SELECT * FROM products LEFT JOIN images ON images.product_id = products.id WHERE products.id = ?";
+		$query = "SELECT image, products.name, products.price, products.id FROM products LEFT JOIN images ON images.product_id = products.id WHERE products.id = ?";
 		$values = $id;
 		return $this->db->query($query,$values)->row_array();
+	}
+	public function search($search_string){
+		$query = "SELECT * FROM products LEFT JOIN images ON images.product_id = products.id WHERE products.name LIKE ?";
+		$string = "%" . $search_string . "%";
+		$values = $string;
+		return $this->db->query($query, $values)->result_array();
 	}
 	public function add_order($order,$products){
 		$query = "INSERT INTO orders (first_name, last_name, address, city, state, zipcode, stripeToken, stripeTokenType, stripeEmail, created_at, updated_at, status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
