@@ -23,7 +23,7 @@ class Clients extends CI_Controller {
 		} else {
 			$products[] = $product;
 		}
-		$quantity_for_res = $this->cart_count();
+		$quantity_for_res = $this->cart_count($product);
 		$response['product_quantity'] = intval($product['quantity']);
 		$response['total'] = intval($quantity_for_res);
 		echo json_encode($response);
@@ -82,7 +82,7 @@ class Clients extends CI_Controller {
 		}
 		return $new_quantity;
 	}
-	protected function cart_count(){ 
+	protected function cart_count($new_product){ 
 	/*This will give us the cart count*/
 		$quantity = 0;
 		if($this->session->userdata('cart') !== null){
@@ -91,6 +91,7 @@ class Clients extends CI_Controller {
 				$quantity += $cart['quantity'];
 			}
 		}
+		$quantity = $quantity + $new_product['quantity'];
 		return $quantity;
 	}
 	
