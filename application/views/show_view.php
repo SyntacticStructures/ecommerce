@@ -23,7 +23,7 @@
 					<input class = "btn" type="submit" name="submit" value="Add to Shopping Cart">
 				</select>
 				<input type="hidden" name="price" value= <?= "'" . $price . "'" ?> >
-				<input type="hidden" name="id" value= <?= "'" . $product_id . "'" ?> >
+				<input type="hidden" name="id" value= <?= "'" . $id . "'" ?> >
 				<input type="hidden" name="name" value=<?= "'" . $name . "'" ?>>
 			</form>
 		</div>

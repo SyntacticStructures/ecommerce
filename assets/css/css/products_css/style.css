@@ -8,6 +8,12 @@
 a {
 	cursor: pointer;
 }
+#quantity_display {
+	cursor: pointer;
+}
+#ajax {
+	text-align: center;
+}
 h1 {
 	font-family: Futura, helvetica, arial;
 	font-size: 75px;

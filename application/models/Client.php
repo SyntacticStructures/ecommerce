@@ -19,7 +19,7 @@ class Client extends CI_Model {
 		return $this->db->query($query,$values)->result_array();
 	}
 	public function get_category_by_category_id($id){
-		/*is it all products?*/
+		/*check if id is for all products?*/
 		if ($id == 0){
 			return 'ALL PRODUCTS';
 		}else{
@@ -29,7 +29,7 @@ class Client extends CI_Model {
 		}
 	}
 	public function get_show($id){
-		$query = "SELECT image, products.name, products.price, products.id FROM products LEFT JOIN images ON images.product_id = products.id WHERE products.id = ?";
+		$query = "SELECT image, products.description, products.inventory_count, products.name, products.price, products.id FROM products LEFT JOIN images ON images.product_id = products.id WHERE products.id = ?";
 		$values = $id;
 		return $this->db->query($query,$values)->row_array();
 	}

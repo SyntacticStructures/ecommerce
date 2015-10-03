@@ -2,7 +2,7 @@
 <?php foreach ($images as $image) { ?>
 	<div class = "imgWrap">
 		<!-- ECHO OUT FROM DATABASE -->
-		<img src= <?php echo '"/assets/' . $image['image'] . '"' ?> height = "420" width = "330">
+		<img src= <?php echo '"/assets/' . $image['image'] . '"' ?> height = "191" width = "163">
 		<!-- ECHO OUT FROM DATABASE INSTEAD OF DUMMY DATA -->
 		<!-- THE LINK GOES TO THE PRODUCT PAGE -->
 		<p class = "imgDescription"> <a class="link" name=<?= "'" + $image['name'] + "'"  ?> id=<?= $image['id'] ?>> <?= $image['name'] ?>/ Price: <?= '$' . $image['price']/100 . '.' . $image['price']%10 . $image['price']%100 ?></a></p>
