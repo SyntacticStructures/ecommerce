@@ -1,6 +1,6 @@
 projectWeekOne
 Simple ecommerce site
 
-This was my very first project in PHP. Full credit to Luke Caddy (github user: lukecaddy) for the front-end design.
+Full credit to Luke Caddy (github user: lukecaddy) for the front-end design and styling.
 
-The idea was to make a bare-bones e-commerce site for our own amusement and educational purposes.
+The idea is to provide a lightweight e-commerce site for showing and ordering fashion products.
